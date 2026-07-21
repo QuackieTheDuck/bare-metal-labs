@@ -1,0 +1,29 @@
+#include <HRM.h>
+
+void UART_setup (){
+    // Disable USART since some registers can be modified only if UE=0
+    USART->CR1 &= ~(HRM_USART_CR1_UE);
+
+    //USART_CR1
+    USART->CR1 &= ~(HRM_USART_CR1_M0 | HRM_USART_CR1_M1);
+    USART->CR1 &= ~(HRM_USART_CR1_OVER8);
+    USART->CR1 &= ~(HRM_USART_CR1_PCE);
+    USART->CR1 |= (HRM_USART_CR1_TE);
+
+    //USART_CR2
+    USART->CR2 &= ~(HRM_USART_CR2_ABREN);
+    USART->CR2 &= ~(HRM_USART_CR2_MSBFIRST);
+    USART->CR2 &= ~(HRM_USART_CR2_DATAINV);
+    USART->CR2 &= ~(HRM_USART_CR2_TXINV);
+    USART->CR2 &= ~(HRM_USART_CR2_SWAP);
+    USART->CR2 &= ~(HRM_USART_CR2_STOP_0 | HRM_USART_CR2_STOP_1);
+
+    //USART_BRR
+    USART->BRR = HRM_USART_BRR_USARTDIV;
+
+    // Enable USART
+    USART->CR1 |= (HRM_USART_CR1_UE);
+}
+
+// USART_ICR
+// USART_ISR
