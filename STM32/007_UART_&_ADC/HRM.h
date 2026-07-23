@@ -5,6 +5,19 @@
 /*                  Hardware Registers Mapping                 */
 /*=============================================================*/
 
+
+//================= Reset and clock control (RCC) ==============
+
+// --- AHB peripheral clock enable register (RCC_AHBENR) ---
+#define HRM_RCC_AHBENR_DMAEN    (1 << 0)  // DMA clock enable
+
+// --- APB peripherial clock enable register 2 (RCC_APB2ENR) ---
+#define HRM_RCC_APB2ENR_USART1EN    (1 << 14)  // USART1 clock enable
+#define HRM_RCC_APB2ENR_ADCEN       (1 << 9)   // ADC interface clock enable
+
+//==============================================================
+
+
 //================= USART CONFIGURATION ========================
 
 // --- USART Control Register 1 (USART_CR1) ---
@@ -25,7 +38,7 @@
 #define HRM_USART_CR2_STOP_1    (1 << 13)  // STOP bit 1
 
 // --- USART Baud rate register (USART_BRR) ---
-#define HRM_USART_BAUDRATE      115200UL  // USART Baudrate
+#define HRM_USART_BAUDRATE      115200UL   // USART Baudrate
 #define HRM_SYSTEM_CORE_CLOCK   8000000UL  // System core clock 
 #define HRM_USART_BRR_USARTDIV     ((HRM_SYSTEM_CORE_CLOCK + HRM_USART_BAUDRATE/2) / HRM_USART_BAUDRATE)  // USARTDIV value
 
@@ -34,42 +47,37 @@
 
 //================== ADC CONFIGURATION =========================
 
-// --- AHB peripheral clock enable register (RCC_AHBENR) ---
-#define HRM_RCC_AHBENR_DMAEN
-
-// --- APB peripherial clock enable register 2 (RCC_APB2ENR) ---
-#define HRM_RCC_APB2ENR_USART1EN
-#define HRM_RCC_APB2ENR_ADCEN
-
-// --- ADC control register (ADC_CR) --- // Here i need to add some bits since calibration is required everytime after reset.  ADCAL ADDIS
-#define HRM_ADC_CR_ADSTART      (1 << 2)  // ADC start conversion command
-#define HRM_ADC_CR_ADEN         (1 << 0)  // ADC enable
-#define HRM_ADC_CR_
-#define HRM_ADC_CR_
+// --- ADC control register (ADC_CR) --- 
+#define HRM_ADC_CR_ADSTART      (1 << 2)   // ADC start conversion command
+#define HRM_ADC_CR_ADEN         (1 << 0)   // ADC enable
+#define HRM_ADC_CR_ADCAL        (1 << 31)  // ADC calibration
+#define HRM_ADC_CR_ADDIS        (1 << 1)   // ADC disable command
 
 // --- ADC configuration register 1 (ADC_CFGR1) ---
 #define HRM_ADC_CFGR1_AWDEN     (1 << 23)  // Analog watchdog enable 
-#define HRM_ADC_CFGR1_DISCEN    (1 << )
+#define HRM_ADC_CFGR1_DISCEN    (1 << 16)  // Discontinous mode
 #define HRM_ADC_CFGR1_WAIT      (1 << 14)  // Wait conversion mode
-#define HRM_ADC_CFGR1_CONT      (1 << )
-#define HRM_ADC_CFGR1_OVRMOD    (1 << )
-#define HRM_ADC_CFGR1_ALIGN     (1 << )
-#define HRM_ADC_CFGR1_RES_0     (1 << )
-#define HRM_ADC_CFGR1_RES_1     (1 << )
-#define HRM_ADC_CFGR1_DMACFG    (1 << )
-#define HRM_ADC_CFGR1_DMAEN     (1 << )
+#define HRM_ADC_CFGR1_CONT      (1 << 13)  // Single/continous mode 
+#define HRM_ADC_CFGR1_OVRMOD    (1 << 12)  // Overrun management mode 
+#define HRM_ADC_CFGR1_ALIGN     (1 << 5)   // Data alignment
+#define HRM_ADC_CFGR1_RES_0     (1 << 3)   // Data resolution bit 0
+#define HRM_ADC_CFGR1_RES_1     (1 << 4)   // Data resolution bit 1
+#define HRM_ADC_CFGR1_DMACFG    (1 << 1)   // Direct memory access configuration
+#define HRM_ADC_CFGR1_DMAEN     (1 << 0)   // Direct memory access enable
 
 // --- ADC sampling time register (ADC_SMPR) ---
-#define HRM_ADC_SMPR_SMP_0      (1 << )
-#define HRM_ADC_SMPR_SMP_1      (1 << )
-#define HRM_ADC_SMPR_SMP_2      (1 << )
+#define HRM_ADC_SMPR_SMP_0      (1 << 0)  // Sampling time selection bit 0
+#define HRM_ADC_SMPR_SMP_1      (1 << 1)  // Sampling time selection bit 1
+#define HRM_ADC_SMPR_SMP_2      (1 << 2)  // Sampling time selection bit 2
 
 // --- ADC channel selection register (ADC_CHSELR) ---
-#define HRM_ADC_CHSELR_0        (1 << 0)  // Channel 0 selection
+#define HRM_ADC_CHSELR_0        (1 << 0)  // ADC channel 0 selection
 
 // --- ADC common configuration register (ADC_CCR) ---
 #define HRM_ADC_CCR_VREFEN      (1 << 22)  // V_refinit enable
 
-// need to map dr address
+// --- ADC data registry (ADC_DR) ---
+#define HRM_ADC_DR_DATA_MASK    (0xFFF)  // Mask used for data reading
+#define HRM_ADC_DR_DATA_OFFSET  (0)      // Data offset
 
 #endif /* HRM_H_ */
