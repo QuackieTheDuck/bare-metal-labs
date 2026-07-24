@@ -18,4 +18,9 @@ Because I've transmitted raw data from the ADC the Arduino IDE was not able to d
 
 ### Hardware Connection and Parameters:
 
--
+- ### Update:
+
+A simple line in Python is enough to calculate the value based on the observed transmission: `print((second_byte << 8) | first_byte)`.
+Additionally, I managed to add oscilloscope measurements to the documentation.
+Oscilloscope captures confirm accurate readings across the 0–1023 range.
+During testing, a calibration issue was identified where an incorrect reference voltage(3.3V instead of 5V) limited the maximum output to ~670, which has since been resolved.
