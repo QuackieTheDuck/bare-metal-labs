@@ -18,7 +18,9 @@ Because I've transmitted raw data from the ADC the Arduino IDE was not able to d
 
 ### Hardware Connection and Parameters:
 
-- ### Update:
+-
+
+### Update:
 
 A simple line in Python is enough to calculate the value based on the observed transmission: `print((second_byte << 8) | first_byte)`.
 Additionally, I managed to add oscilloscope measurements to the documentation.
