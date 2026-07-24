@@ -47,11 +47,15 @@
 
 //================== ADC CONFIGURATION =========================
 
+// --- ADC interrupt and status register (ADC_ISR) ---
+#define HRM_ADC_ISR_EOC     (1 << 2)   // End of conversion
+#define HRM_ADC_ISR_ADRDY   (1 << 0)   // ADC ready
+ 
 // --- ADC control register (ADC_CR) --- 
 #define HRM_ADC_CR_ADSTART      (1 << 2)   // ADC start conversion command
 #define HRM_ADC_CR_ADEN         (1 << 0)   // ADC enable
-#define HRM_ADC_CR_ADCAL        (1 << 31)  // ADC calibration
-#define HRM_ADC_CR_ADDIS        (1 << 1)   // ADC disable command
+#define HRM_ADC_CR_ADCAL        (1U << 31)  // ADC calibration
+#define HRM_ADC_CR_ADSTART      (1 << 2)   // ADC start conversion
 
 // --- ADC configuration register 1 (ADC_CFGR1) ---
 #define HRM_ADC_CFGR1_AWDEN     (1 << 23)  // Analog watchdog enable 
@@ -79,5 +83,14 @@
 // --- ADC data registry (ADC_DR) ---
 #define HRM_ADC_DR_DATA_MASK    (0xFFF)  // Mask used for data reading
 #define HRM_ADC_DR_DATA_OFFSET  (0)      // Data offset
+
+//=============================================================
+
+//================== DMA configuration ========================
+
+// ---  ---
+
+//=============================================================
+
 
 #endif /* HRM_H_ */
