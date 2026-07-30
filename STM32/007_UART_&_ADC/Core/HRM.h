@@ -88,7 +88,71 @@
 
 //================== DMA configuration ========================
 
-// ---  ---
+// --- DMA interrupt status registers (DMA_ISR) ---
+#define HRM_DMA_ISR_TCIF1       (1 << 1)  // Transfer complete flag for channel 1
+#define HRM_DMA_ISR_HTIF1       (1 << 2)  // Half transfer flag for channel 1
+#define HRM_DMA_ISR_TEIF1       (1 << 3)  // Transfer error flag fo channel 1
+#define HRM_DMA_ISR_TCIF2       (1 << 5)  // Transfer complete flag for channel 2
+#define HRM_DMA_ISR_HTIF2       (1 << 6)  // Half transfer flag for channel 2
+#define HRM_DMA_ISR_TEIF2       (1 << 7)  // Transfer error flag for channel 2
+
+// --- DMA interrupt clear register (DMA_IFCR) ---
+#define HRM_DMA_IFCR_CGIF1      (1 << 0)  // Global interrupt flag clear for channel 1
+#define HRM_DMA_IFCR_CGIF2      (1 << 4)  // Global interrupt flag clear for channel 2
+
+//--- DMA channel 1 configuration register (DMA_CCR1) ---
+#define HRM_DMA_CCR1_MEM2MEM    (1 << 14)  // Memory-to-memory mode
+#define HRM_DMA_CCR1_PL_0       (1 << 12)  // Priority level bit 0
+#define HRM_DMA_CCR1_PL_1       (1 << 12)  // Priority level bit 1
+#define HRM_DMA_CCR1_MSIZE_0    (1 << 13)  // Memory size bit 0
+#define HRM_DMA_CCR1_MSIZE_1    (1 << 10)  // Memory size bit 1
+#define HRM_DMA_CCR1_PSIZE_0    (1 << 11)  // Peripheral size bit 0
+#define HRM_DMA_CCR1_PSIZE_1    (1 << 8)   // Peripheral size bit 1
+#define HRM_DMA_CCR1_MINC       (1 << 9)   // Memory increment mode
+#define HRM_DMA_CCR1_PINC       (1 << 7)   // Pheripheral increment  mode
+#define HRM_DMA_CCR1_CIRC       (1 << 6)   // Circural mode
+#define HRM_DMA_CCR1_DIR        (1 << 5)   // Data transfer direction
+#define HRM_DMA_CCR1_TEIE       (1 << 4)   // Transfer error interrupt enable
+#define HRM_DMA_CCR1_TCIE       (1 << 1)   // Transfer complete interrupt enable
+#define HRM_DMA_CCR1_EN         (1 << 0)   // Channel enable
+
+//--- DMA channel 2 configuration register (DMA_CCR2) ---
+#define HRM_DMA_CCR2_MEM2MEM    (1 << 14)  // Memory-to-memory mode
+#define HRM_DMA_CCR2_PL_0       (1 << 12)  // Priority level bit 0
+#define HRM_DMA_CCR2_PL_1       (1 << 13)  // Priority level bit 1
+#define HRM_DMA_CCR2_MSIZE_0    (1 << 10)  // Memory size bit 0
+#define HRM_DMA_CCR2_MSIZE_1    (1 << 11)  // Memory size bit 1
+#define HRM_DMA_CCR2_PSIZE_0    (1 << 8)   // Peripheral size bit 0
+#define HRM_DMA_CCR2_PSIZE_1    (1 << 9)   // Peripheral size bit 1
+#define HRM_DMA_CCR2_MINC       (1 << 7)   // Memory increment mode
+#define HRM_DMA_CCR2_PINC       (1 << 6)   // Pheripheral increment mode
+#define HRM_DMA_CCR2_CIRC       (1 << 5)   // Circural mode
+#define HRM_DMA_CCR2_DIR        (1 << 4)   // Data transfer direction
+#define HRM_DMA_CCR2_TEIE       (1 << 3)   // Transfer error interrupt enable
+#define HRM_DMA_CCR2_TCIE       (1 << 1)   // Transfer complete interrupt enable
+#define HRM_DMA_CCR2_EN         (1 << 0)   // Channel enable
+
+
+//--- DMA channel 1 number of data to transfer register (DMA_CNDTR1) ---
+#define HRM_DMA_CNDTR1_VALUE    (1)  // Number of data to transfer
+
+//--- DMA channel 2 number of data to transfer register (DMA_CNDTR2) ---
+#define HRM_DMA_CNDTR2_VALUE    (2)  // Number of data to transfer
+
+//--- DMA channel 1 peripheral address register (DMA_CPAR1) ---
+
+
+//--- DMA channel 2 peripheral address register (DMA_CPAR2) ---
+
+
+//--- DMA channel 1 memory address register (DMA_CMAR1) ---
+
+
+//--- DMA channel 2 memory address register (DMA_CMAR2) ---
+
+
+//--- DMA channel selection register (DMA_CSELR) ---
+
 
 //=============================================================
 
