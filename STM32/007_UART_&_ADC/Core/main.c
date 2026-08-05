@@ -3,6 +3,7 @@
 #include "ADC_cnfg.h"
 #include "UART_cnfg.h"
 #include "HRM.h"
+#include "DMA_cnfg.h"
 
 // in use: ADC1/0 D13 and UART communication 
 // IMPORTANT! first setup clocks and used pins then setup USART and ADC
@@ -15,5 +16,6 @@ int main(){
     setup();
     ADC_setup();
     UART_setup();
+    DMA_setup();
     
 }
