@@ -13,6 +13,11 @@ void setup(){
 }
 
 int main(){
+
+    // DMA data variable 
+    volatile uint16_t DMA_data = 0;
+
+    // Setup functions
     setup();
     ADC_setup();
     UART_setup();

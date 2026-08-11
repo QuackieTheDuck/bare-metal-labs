@@ -155,7 +155,7 @@
 #define HRM_DMA_CPAR1           (0x40012440)  // An absolute address
 
 //--- DMA channel 2 peripheral address register (DMA_CPAR2) ---
-#define HRM_DMA_CPAR2           (0x40013828)
+#define HRM_DMA_CPAR2           (0x40013828)  // An absolute address
 
 //--- DMA channel selection register (DMA_CSELR) ---
 #define HRM_DMA_CSELR_C1S_BIT_0     (1 << 0)  // 
