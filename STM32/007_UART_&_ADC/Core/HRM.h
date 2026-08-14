@@ -12,6 +12,8 @@
 
 // --- AHB peripheral clock enable register (RCC_AHBENR) ---
 #define HRM_RCC_AHBENR_DMAEN    (1 << 0)  // DMA clock enable
+#define HRM_RCC_AHBENR_GPIOAEN  (1 << 17) // GPIOA clock enable
+#define HRM_RCC_AHBENR_SRAMEN   (1 << 2)  // SRAM clock enable
 
 // --- APB peripherial clock enable register 2 (RCC_APB2ENR) ---
 #define HRM_RCC_APB2ENR_USART1EN    (1 << 14)  // USART1 clock enable
@@ -22,7 +24,7 @@
 
 //========================== GPIOA ============================ 
 
-// ---  ---
+// --- GPIO port moder register (GPIOA_MODER) ---
 
 // ---  ---
 

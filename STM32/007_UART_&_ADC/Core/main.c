@@ -10,6 +10,14 @@
 
 void setup(){
 
+    // clocks enable
+    RCC->AHBENR |= HRM_RCC_AHBENR_GPIOAEN;
+    RCC->AHBENR |= HRM_RCC_AHBENR_SRAMEN;
+    RCC->AHBENR |= HRM_RCC_AHBENR_DMAEN;
+    RCC->APB2ENR |= HRM_RCC_APB2ENR_USART1EN;
+    RCC->APB2ENR |= HRM_RCC_APB2ENR_ADCEN;
+
+    
 }
 
 int main(){
