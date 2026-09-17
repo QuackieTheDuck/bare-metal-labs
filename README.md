@@ -10,4 +10,4 @@ Pure silicon. Only registers and datasheets. No HAL.
 
 - `STM32`:
   - ARM-based 32-bit microcontroller projects and practice.
-  - `Cheatsheet` documenting my projects and hardware deep-dives.
+  - Documentation of my projects is based on `READEME.md` files in every project.
