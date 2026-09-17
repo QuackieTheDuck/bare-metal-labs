@@ -29,14 +29,20 @@ int main(){
     setup();
     ADC_setup();
     UART_setup();
-    DMA_setup();
+    DMA_setup(uint16_t &DMA_data);
+
+
 
     while(1){
-        //implement logic here
+        // implement logic here
         // waiting for an adc
         // then sending it to the memory via dma1
         // from memory to uart via dma 2
         // repeat in cycle 
+        ADC->CR |= HRM_ADC_CR_ADSTART;  // start conversion
+        if (DMA->ISR & HRM_DMA_ISR_TCIF1){      // wait till dma finishes
+
+        }
     }
     
 }
