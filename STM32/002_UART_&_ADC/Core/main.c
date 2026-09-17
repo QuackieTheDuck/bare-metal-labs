@@ -23,12 +23,20 @@ void setup(){
 int main(){
 
     // DMA data variable 
-    volatile uint16_t DMA_data = 0;
+    static volatile uint16_t DMA_data = 0;
 
     // Setup functions
     setup();
     ADC_setup();
     UART_setup();
     DMA_setup();
+
+    while(1){
+        //implement logic here
+        // waiting for an adc
+        // then sending it to the memory via dma1
+        // from memory to uart via dma 2
+        // repeat in cycle 
+    }
     
 }
