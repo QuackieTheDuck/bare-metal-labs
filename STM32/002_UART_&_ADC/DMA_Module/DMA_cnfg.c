@@ -1,11 +1,12 @@
 #include <HRM.h>
 
-void DMA_setup(){
+void DMA_setup(uint_16t &DMA_data){
+
     // Need to disable a DMA to configure some bits
     DMA->CCR1 &= ~(HRM_DMA_CCR1_EN);
     DMA->CCR2 &= ~(HRM_DMA_CCR2_EN);
     while ((DMA->CCR1 & HRM_DMA_CCR1_EN) != 0 || (DMA->CCR2 & HRM_DMA_CCR2_EN) != 0)){
-        _NOP();
+        __NOP();
     }
 
     // DMA_CCR1 from ADC to MEM
@@ -59,7 +60,7 @@ void DMA_setup(){
     DMA->CCR1 |= HRM_DMA_CCR1_EN;
     DMA->CCR2 |= HRM_DMA_CCR2_EN;
     while ((DMA->CCR1 & HRM_DMA_CCR1_EN) == 0 || (DMA->CCR2 & HRM_DMA_CCR2_EN) == 0)){
-        _NOP();
+        __NOP();
     }
 
 }
