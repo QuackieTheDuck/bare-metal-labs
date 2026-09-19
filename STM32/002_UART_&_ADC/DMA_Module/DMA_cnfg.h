@@ -5,4 +5,8 @@
 
 void DMA_setup ();
 
+void trigger_DMA1();
+
+void trigger_DMA2();
+
 #endif /* DMA_CNFG_H_ */

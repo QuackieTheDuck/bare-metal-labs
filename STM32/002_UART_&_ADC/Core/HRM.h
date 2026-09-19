@@ -145,10 +145,10 @@
 #define HRM_DMA_CNDTR2_VALUE    (2)  // Number of data to transfer
 
 //--- DMA channel 1 peripheral address register (DMA_CPAR1) ---
-#define HRM_DMA_CPAR1           (0x40012440)  // An absolute address
+#define HRM_DMA_CPAR1_VALUE         (0x40012440)  // An absolute address
 
 //--- DMA channel 2 peripheral address register (DMA_CPAR2) ---
-#define HRM_DMA_CPAR2           (0x40013828)  // An absolute address
+#define HRM_DMA_CPAR2_VALUE         (0x40013828)  // An absolute address
 
 //--- DMA channel selection register (DMA_CSELR) ---
 #define HRM_DMA_CSELR_C1S_BIT_0     (1 << 0)  // 
