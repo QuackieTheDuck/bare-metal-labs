@@ -37,7 +37,7 @@ int main(){
 
     // "warm up" need to start the cycle 
     trigger_DMA1();
-    ADC->CR |= HRM_ADC_CR_ADSTART;
+    ADC1->CR |= HRM_ADC_CR_ADSTART;
 
     while(1){
         // implement logic here
@@ -46,17 +46,17 @@ int main(){
         // from memory to uart via dma 2
         // repeat in cycle 
 
-        if (DMA->ISR & HRM_DMA_ISR_TCIF1){
+        if (DMA1->ISR & HRM_DMA_ISR_TCIF1){
             trigger_DMA2();
             // Clearing flags for DMA channel 1
-            DMA->IFCR |= HRM_DMA_IFCR_CGIF1;
+            DMA1->IFCR |= HRM_DMA_IFCR_CGIF1;
         }
-        if (DMA->ISR & HRM_DMA_ISR_TCIF2){
+        if (DMA1->ISR & HRM_DMA_ISR_TCIF2){
             trigger_DMA1();
             // Clearing flags for DMA channel 2
-            DMA->IFCR |= HRM_DMA_IFCR_CGIF2;
+            DMA1->IFCR |= HRM_DMA_IFCR_CGIF2;
             GPIOA->ODR ^= (1 << 5);
-            ADC->CR |= HRM_ADC_CR_ADSTART;
+            ADC1->CR |= HRM_ADC_CR_ADSTART;
         }
 
     }
