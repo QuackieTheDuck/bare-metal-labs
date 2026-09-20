@@ -6,6 +6,8 @@
 #define DELAY_MS_H_
 
 #include <stdint.h>
+#include "delay_ms.h"
+#include "stm32f0xx.h"
 
 void delay_setup();
 void delay_ms(uint16_t time);

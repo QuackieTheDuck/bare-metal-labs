@@ -1,11 +1,12 @@
-#include <HRM.h>
-#include <stdint.h>
+#include "HRM.h"
+#include "stdint.h"
 #include "stm32f0xx.h"
 
 void ADC_setup (){
 
     // ADC disable since it is required to turn it off to configure ADC
-    ADC->CR |= 
+    ADC1->ISR &= ~(HRM_ADC_ISR_ADRDY);
+    ADC1->CR &= ~(HRM_ADC_CR_ADEN);
 
     // ADC_CFGR1
     ADC1->CFGR1 &= ~(HRM_ADC_CFGR1_AWDEN);

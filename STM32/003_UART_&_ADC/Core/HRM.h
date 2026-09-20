@@ -62,7 +62,7 @@
 #define HRM_ADC_CR_ADSTART      (1 << 2)   // ADC start conversion
 
 // --- ADC configuration register 1 (ADC_CFGR1) ---
-#define HRM_ADC_CFGR1_AWDEN1   (1 << 23)  // Analog watchdog enable 
+#define HRM_ADC_CFGR1_AWDEN     (1 << 23)  // Analog watchdog enable 
 #define HRM_ADC_CFGR1_DISCEN    (1 << 16)  // Discontinous mode
 #define HRM_ADC_CFGR1_WAIT      (1 << 14)  // Wait conversion mode
 #define HRM_ADC_CFGR1_CONT      (1 << 13)  // Single/continous mode 
