@@ -5,8 +5,7 @@
 void ADC_setup (){
 
     // ADC disable since it is required to turn it off to configure ADC
-    ADC1->CR &= ~(HRM_ADC_CR_ADEN);
-    ADC1->CR &= ~(HRM_ADC_CR_ADSTART);
+    ADC->CR |= 
 
     // ADC_CFGR1
     ADC1->CFGR1 &= ~(HRM_ADC_CFGR1_AWDEN);

@@ -31,6 +31,7 @@ int main(){
 
     // Setup functions
     setup();
+    delay_setup();
     ADC_setup();
     UART_setup();
     DMA_setup(&DMA_data);
@@ -55,9 +56,11 @@ int main(){
             trigger_DMA1();
             // Clearing flags for DMA channel 2
             DMA1->IFCR |= HRM_DMA_IFCR_CGIF2;
-            GPIOA->ODR ^= (1 << 5);
+            //GPIOA->ODR ^= (1 << 5);
             ADC1->CR |= HRM_ADC_CR_ADSTART;
         }
+        GPIOA->ODR ^= (1 << 5);
+        delay_ms(1000); 
 
     }
     
