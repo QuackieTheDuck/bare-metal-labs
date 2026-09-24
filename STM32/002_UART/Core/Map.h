@@ -52,11 +52,16 @@
 #define Map_USART2_CR3_HDSEL    (1 << 3)    // Half-dupplex mode selection
 #define Map_USART2_CR3_EIE      (1 << 0)    // Error interrupt enable
 
-//================ USART Baud rate register (USART2_BRR) =======
+//================ USART2 Baud rate register (USART2_BRR) =======
 #define Map_USART2_BAUDRATE      115200UL   // USART Baudrate
 #define Map_SYSTEM_CORE_CLOCK   8000000UL  // System core clock 
 #define Map_USART2_BRR_USARTDIV     ((HRM_SYSTEM_CORE_CLOCK + HRM_USART_BAUDRATE/2) / HRM_USART_BAUDRATE)  // USARTDIV value
 
+//====== USART2 interrupt and status register (USART2_ISR) ======
+#define
+
+//====== USART2 interrupt flag clear register (USART2_ICR) ======
+#define 
 
 //===============================================================
 

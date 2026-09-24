@@ -32,7 +32,7 @@ void usart_cnfg(){
     USART2->CR1 &= ~(Map_USART2_CR1_CMIE);
     USART2->CR1 &= ~(Map_USART2_CR1_MME);
     USART2->CR1 &= ~(Map_USART2_CR1_TXEIE);
-    USART2->CR1 |= Map_USART2_CR1_TCIE;
+    USART2->CR1 &= ~(Map_USART2_CR1_TCIE);      // Only to create a PoW
     USART2->CR1 |= Map_USART2_CR1_TE;
 
     USART2->CR2 &= ~(Map_USART2_CR2_ABREN);
@@ -43,5 +43,5 @@ void usart_cnfg(){
     USART2->CR3 |= Map_USART2_CR3_DMAR;
     USART2->CR3 &= ~(Map_USART2_CR3_EIE);
 
-    
+    `
 }
