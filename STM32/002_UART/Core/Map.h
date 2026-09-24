@@ -49,8 +49,13 @@
 #define Map_USART2_CR3_RTSE     (1 << 8)    // Request to send enable 
 #define Map_USART2_CR3_DMAT     (1 << 7)    // DMA enable transmitter
 #define Map_USART2_CR3_DMAR     (1 << 6)    // DMA enable reciever
-#define Map_USART2_CR3_HDSEL    (1 << 3)    //
-#define Map_USART2_CR3_EIE      (1 << 0)    //
+#define Map_USART2_CR3_HDSEL    (1 << 3)    // Half-dupplex mode selection
+#define Map_USART2_CR3_EIE      (1 << 0)    // Error interrupt enable
+
+//================ USART Baud rate register (USART2_BRR) =======
+#define Map_USART2_BAUDRATE      115200UL   // USART Baudrate
+#define Map_SYSTEM_CORE_CLOCK   8000000UL  // System core clock 
+#define Map_USART2_BRR_USARTDIV     ((HRM_SYSTEM_CORE_CLOCK + HRM_USART_BAUDRATE/2) / HRM_USART_BAUDRATE)  // USARTDIV value
 
 
 //===============================================================

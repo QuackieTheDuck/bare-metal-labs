@@ -22,6 +22,9 @@ void usart_cnfg(){
     USART2->CR3 |= Map_USART2_CR3_ONEBIT;
     USART2->CR3 &= ~(Map_USART2_CR3_CTSE);
     USART2->CR3 &= ~(Map_USART2_CR3_RTSE);
+    USART2->CR3 &= ~(Map_USART2_CR3_HDSEL);
+
+    USART2->BRR = Map_USART2_BRR_USARTDIV;
 
 
     // Not specified if USART must be disabled
@@ -38,6 +41,7 @@ void usart_cnfg(){
 
     USART2->CR3 |= Map_USART2_CR3_DMAT;
     USART2->CR3 |= Map_USART2_CR3_DMAR;
+    USART2->CR3 &= ~(Map_USART2_CR3_EIE);
 
     
 }
