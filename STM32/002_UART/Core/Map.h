@@ -40,7 +40,18 @@
 #define Map_USART2_CR2_CLKEN    (1 << 11)   // Clock enable (SWITCHES UART to USART!)
 
 //================= USART Control register 3 (USART2_CR3)========
-#define Map_USRAT2_CR3_
+#define Map_USRAT2_CR3_DEM      (1 << 14)   // Driver enable mode
+#define Map_USART2_CR3_DDRE     (1 << 13)   // DMA disbale on reception error 
+#define Map_USART2_CR3_OVRDIS   (1 << 12)   // Overrun disable 
+#define Map_USART2_CR3_ONEBIT   (1 << 11)   // One bit sample method
+#define Map_USART2_CR3_CTSIE    (1 << 10)   // CTS interupt enable
+#define Map_USART2_CR3_CTSE     (1 << 9)    // Clear to send enable
+#define Map_USART2_CR3_RTSE     (1 << 8)    // Request to send enable 
+#define Map_USART2_CR3_DMAT     (1 << 7)    // DMA enable transmitter
+#define Map_USART2_CR3_DMAR     (1 << 6)    // DMA enable reciever
+#define Map_USART2_CR3_HDSEL    (1 << 3)    //
+#define Map_USART2_CR3_EIE      (1 << 0)    //
+
 
 //===============================================================
 
