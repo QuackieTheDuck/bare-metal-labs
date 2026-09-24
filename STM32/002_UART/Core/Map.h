@@ -39,6 +39,9 @@
 #define Map_USART2_CR2_STOP1    (1 << 13)   // STOP bit 1
 #define Map_USART2_CR2_CLKEN    (1 << 11)   // Clock enable (SWITCHES UART to USART!)
 
+//================= USART Control register 3 (USART2_CR3)========
+#define Map_USRAT2_CR3_
+
 //===============================================================
 
 

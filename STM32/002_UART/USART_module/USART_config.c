@@ -9,6 +9,12 @@ void usart_cnfg(){
     USART2->CR1 &= ~(Map_USART2_CR1_OVER8);
     USART2->CR1 &= ~(Map_USART2_CR1_PCE);
     USART2->CR2 &= ~(Map_USART2_CR2_MSBFIRST);
+    USART2->CR2 &= ~(Map_USART2_CR2_DATAINV);
+    USART2->CR2 &= ~(Map_USART2_CR2_TXINV);
+    USART2->CR2 &= ~(Map_USART2_CR2_SWAP);
+    USART2->CR2 &= ~(Map_USART2_CR2_STOP0 | Map_USART2_CR2_STOP1);
+    USART2->CR2 &= ~(Map_USART2_CR2_CLKEN);
+
 
     // Not specified if USART must be disabled
     USART2->CR1 &= ~(Map_USART2_CR1_RTOIE);
