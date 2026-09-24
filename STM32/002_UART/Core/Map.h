@@ -58,10 +58,10 @@
 #define Map_USART2_BRR_USARTDIV     ((HRM_SYSTEM_CORE_CLOCK + HRM_USART_BAUDRATE/2) / HRM_USART_BAUDRATE)  // USARTDIV value
 
 //====== USART2 interrupt and status register (USART2_ISR) ======
-#define
+#define Map_USART2_ISR_TXE      (1 << 7)    // Transmission data register empty
 
 //====== USART2 interrupt flag clear register (USART2_ICR) ======
-#define 
+#define Map_USART2_ICR_TCCF    (1 << 6)     // Transmission complete flag clear 
 
 //===============================================================
 

@@ -43,5 +43,4 @@ void usart_cnfg(){
     USART2->CR3 |= Map_USART2_CR3_DMAR;
     USART2->CR3 &= ~(Map_USART2_CR3_EIE);
 
-    `
 }
